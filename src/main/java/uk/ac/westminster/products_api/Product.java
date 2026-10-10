@@ -18,3 +18,5 @@ public class Product {
 
     public double getPrice() { return price; }
 }
+
+//Verified getter removal drops the field from JSON
