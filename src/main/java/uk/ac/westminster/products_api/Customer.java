@@ -24,3 +24,4 @@ public class Customer {
     public Address getAddress() { return address; }
 }
 
+//The address is a nested object inside the customer, with its own pair of braces

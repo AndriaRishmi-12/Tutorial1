@@ -20,3 +20,4 @@ public class Address {
     public String getPostcode() { return postcode; }
 }
 
+//The address is a nested object inside the customer, with its own pair of braces
