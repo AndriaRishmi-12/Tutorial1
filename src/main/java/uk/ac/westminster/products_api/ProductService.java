@@ -37,6 +37,12 @@ public class ProductService {
 
     }
 
+    public ProductService() {
+        products.add(new DigitalProduct(nextId++,"ebook", 9800.00,89.36,"/url/book"));
+        products.add(new PhysicalProduct(nextId++,"music", 12000.00,5.32,"12cm * 15cm * 50cm"));
+    }
+
+
 
 
 
