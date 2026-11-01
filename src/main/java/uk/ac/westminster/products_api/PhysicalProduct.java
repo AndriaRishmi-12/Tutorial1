@@ -6,9 +6,12 @@
 
 package uk.ac.westminster.products_api;
 
-public class PhysicalProduct extends Product{
+import java.io.Serializable;
+
+public class PhysicalProduct extends Product implements Discountable {
     private double weightKg;
     private String dimensions;
+    private double discountedPrice;
 
     public PhysicalProduct(Long id, String name, double price,double weightKg, String dimensions) {
         super(id, name, price);
@@ -33,4 +36,22 @@ public class PhysicalProduct extends Product{
     public void setDimensions(String dimensions) {
         this.dimensions = dimensions;
     }
+
+    @Override
+    public String getSummary() {
+        return getName() + "-" + weightKg;
+    }
+
+    @Override
+    public void applyDiscount(double rate) {
+        double capped = Math.min(rate, 0.20);
+        this.discountedPrice = getPrice() * (1 - capped);
+
+    }
+
+    @Override
+    public double getDiscountedPrice() {
+        return discountedPrice;
+    }
 }
+// Always write @Override so the compiler can catch typos or signature mistakes instead of silently failing or creating an unwanted overload.

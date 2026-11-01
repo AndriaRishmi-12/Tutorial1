@@ -42,6 +42,15 @@ public class ProductService {
         products.add(new PhysicalProduct(nextId++,"music", 12000.00,5.32,"12cm * 15cm * 50cm"));
     }
 
+    public List<String> getAllSummaries(){
+        List<String> summaries = new ArrayList<>();
+
+        for (Product p: products){
+            summaries.add(p.getSummary());
+        }
+        return summaries;
+    }
+
 
 
 
